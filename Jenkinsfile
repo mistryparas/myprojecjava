@@ -27,7 +27,7 @@ pipeline
       }
       stage ("Docker Build") {
         steps {
-          sh ''' docker build -t project-demo:2.\${BUILD_NUMBER} .'''
+          sh ''' docker build -t project-demo:3.\${BUILD_NUMBER} .'''
         }
       }
 
