@@ -14,10 +14,22 @@ pipeline
         }
       }
       stage("Build") {
-          steps {
-             sh  '''mvn clean package '''
-          }
+        steps {
+          sh  '''mvn clean package '''
         }
+      }
+      stage("Env create") {
+        steps {
+          sh ''' mkdir -p pkg
+          mv target/demo.war pkg/demo.war
+          '''
+        }
+      }
+      stage ("Docker Build") {
+        steps {
+          sh ''' docker build -t project-demo:2.\${BUILD_NUMBER} .'''
+        }
+      }
 
 
     }
