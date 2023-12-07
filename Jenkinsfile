@@ -31,9 +31,9 @@ pipeline
        stage ("Push Images") {
         steps {
           sh ''' docker login
-          docker tag project-demo:3.\${BUILD_NUMBER} mistryparas/devops-demo:v3.\${BUILD_NUMBER}
-          docker push mistryparas/devops-demo:v3.\${BUILD_NUMBER} 
-          docker rmi mistryparas/devops-demo:v3.\${BUILD_NUMBER} project-demo:3.\${BUILD_NUMBER}'''
+          docker tag project-demo:4.\${BUILD_NUMBER} mistryparas/devops-demo:v4.\${BUILD_NUMBER}
+          docker push mistryparas/devops-demo:v4.\${BUILD_NUMBER} 
+          docker rmi mistryparas/devops-demo:v4.\${BUILD_NUMBER} project-demo:4.\${BUILD_NUMBER}'''
         }
       }
 
